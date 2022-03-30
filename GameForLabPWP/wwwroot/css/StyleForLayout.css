@@ -1,0 +1,10 @@
+﻿.game-background {
+    min-height: 110%;
+    min-width: 110%;
+    position: fixed;
+    top: -10%;
+    left:-10%;
+    background: url('../images/background_image.jpg') 50% 50%/ cover no-repeat;
+    overflow: hidden;
+    z-index: -1;
+}

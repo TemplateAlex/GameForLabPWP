@@ -1,0 +1,10 @@
+﻿.container-spaceship {
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 100px;
+    height: 100px;
+    transition: all 0.5s;
+    transform: rotate(0deg);
+    background: url('../images/SpaceShip.png') 50% 50% / cover no-repeat; 
+}

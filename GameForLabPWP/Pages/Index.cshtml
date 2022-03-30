@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section Styles{ 
+    <link rel="stylesheet" href="~/css/StyleForMain.css" type="text/css">
+}
+
+<div class="main-menu main-menu__wrapper">
+    <div class="container container-btns d-flex flex-column justify-content-center align-items-center">
+        <a asp-page="Game" class="btn btn-outline-light">Play</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-light">Exit</a>
+    </div>
+</div>

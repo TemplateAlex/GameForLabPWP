@@ -1,0 +1,43 @@
+﻿@page
+@model GameForLabPWP.Pages.GameModel
+@{
+    ViewData["Title"] = "Game";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/StyleForGame.css" type="text/css">
+}
+
+<div id="spaceShip" class="container container-spaceship"></div>
+
+@section Scripts{ 
+    <script>
+        var cursorX, cursorY;
+        var spaceShip = document.getElementById("spaceShip");
+
+        function CountRadian(x, y) {
+            if (x > 0) return Math.atan2(y, x) + Math.PI / 2;
+            if (x < 0) return Math.atan2(y, x) - 3 * Math.PI / 2;
+        }
+
+        document.addEventListener("mousemove", function (event) {
+            //Get first coordinates our cursor
+            cursorX = event.clientX;
+            cursorY = event.clientY;
+        });
+
+        setInterval(function () {
+            //Get coordinates out space ship
+            var spaceShipX = spaceShip.offsetLeft - (spaceShip.offsetHeight / 2);
+            var spaceShipY = spaceShip.offsetTop - (spaceShip.offsetWidth / 2);
+            var radian = CountRadian((cursorX - spaceShipX), (cursorY - spaceShipY))
+            console.log(radian);
+            //Count new coordinates and realize a passing the way
+            spaceShipX += (cursorX - spaceShipX) / 2;
+            spaceShipY += (cursorY - spaceShipY) / 2;
+            spaceShip.style.left = spaceShipX + "px";
+            spaceShip.style.top = spaceShipY + "px";
+            spaceShip.style.transform = "rotate(" + radian + "rad)";
+        }, 100);
+    </script>
+}
